@@ -1,0 +1,39 @@
+{
+  "name": "serverless-plugin-microservices",
+  "version": "1.0.0",
+  "description": "Serverless plugin to handle microservices architecture",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/daaru00/serverless-plugin-microservices.git"
+  },
+  "keywords": [
+    "serverless",
+    "aws",
+    "microservices"
+  ],
+  "author": "Fabio Gollinucci",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/daaru00/serverless-plugin-microservices/issues"
+  },
+  "homepage": "https://github.com/daaru00/serverless-plugin-microservices#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0"
+  },
+  "dependencies": {
+    "ascii-progress": "^1.0.5",
+    "glob": "^7.1.4",
+    "glob-promise": "^3.4.0",
+    "lodash": "^4.17.15",
+    "node-run-cmd": "^1.0.1"
+  },
+  "peerDependencies": {
+    "js-yaml": "^3.13.1"
+  }
+}
