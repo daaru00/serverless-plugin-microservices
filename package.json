@@ -1,6 +1,6 @@
 {
   "name": "serverless-plugin-microservices",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Serverless plugin to handle microservices architecture",
   "main": "index.js",
   "repository": {
@@ -27,7 +27,6 @@
     "eslint-plugin-standard": "^4.0.0"
   },
   "dependencies": {
-    "ascii-progress": "^1.0.5",
     "glob": "^7.1.4",
     "glob-promise": "^3.4.0",
     "lodash": "^4.17.15",
