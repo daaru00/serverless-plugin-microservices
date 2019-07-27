@@ -1,6 +1,6 @@
-# Serverless Microsevices
+# Serverless Microservices
 
-[![npm](https://img.shields.io/npm/v/serverless-plugin-microsevices.svg)](https://www.npmjs.com/package/serverless-plugin-microsevices)
+[![npm](https://img.shields.io/npm/v/serverless-plugin-microservices.svg)](https://www.npmjs.com/package/serverless-plugin-microservices)
 
 A [serverless](https://serverless.com) plugin to handle [Microservices](https://en.wikipedia.org/wiki/Microservices) architectural style that structures application in different Serverless projects.
 
@@ -9,18 +9,18 @@ A [serverless](https://serverless.com) plugin to handle [Microservices](https://
 ### Installation
 
 ```bash
-$ npm install serverless-plugin-microsevices --save-dev
+$ npm install serverless-plugin-microservices --save-dev
 ```
 or using yarn
 ```bash
-$ yarn add serverless-plugin-microsevices
+$ yarn add serverless-plugin-microservices
 ```
 
 ### Configuration
 
 ```yaml
 plugins:
-  - serverless-plugin-microsevices
+  - serverless-plugin-microservices
 
 custom:
   service:
@@ -32,11 +32,11 @@ custom:
       - products
 ```
 
-`path`: glob pattern that point to sevice's `serverless.yml` file.
+`path`: glob pattern that point to service's `serverless.yml` file.
 
 `strategy`: this is the default configuration of deploy strategy. Can be overrided by `--strategy` parameter. This can be used to deploy service with cross-service dependencies that require a sequential deploy in some cases.
 
-`only`: during seviceses load it's `serverless.yml` are readed and `service` key (use by Serverless to identify your app name) is used as filter target.
+`only`: during services load their `serverless.yml` are readed and `service` key (use by Serverless to identify your app name) is used as filter target.
 
 ## Repository structures
 
@@ -61,12 +61,12 @@ myapp
         ├── handler.js
         └── severless.yml
 ```
-where the root `serverless.yml` file contains `serverless-plugin-microsevices` configurations and some globals resources. Every service directory contain a Serverless framework's project that will deployed separatly in the same method you deploy a single project.
+where the root `serverless.yml` file contains `serverless-plugin-microservices` configurations and some globals resources. Every service directory contain a Serverless framework's project that will deployed separatly in the same method you deploy a single project.
 
 With this repository organization you can use a configuration similar to:
 ```yaml
 plugins:
-  - serverless-plugin-microsevices
+  - serverless-plugin-microservices
 
 custom:
   service:
@@ -74,7 +74,7 @@ custom:
     strategy: parallel
 ```
 
-Deploy all sevices using:
+Deploy all services using:
 ```bash
 serverless microservices init
 serverless microservices deploy --stage dev --region us-west-1
@@ -105,7 +105,7 @@ myapp
 ├── package.json
 └── serverless.yml
 ```
-where every npm modules is a seprate Serverless projects service, root `serverless.yml` file contains `serverless-plugin-microsevices`
+where every npm modules is a separate Serverless projects service, root `serverless.yml` file contains `serverless-plugin-microservices`
 
 Your `package.json` can include service from Github:
 ```json
@@ -135,7 +135,7 @@ using a specific version or commit id:
 With this repository organization you can use a configuration similar to:
 ```yaml
 plugins:
-  - serverless-plugin-microsevices
+  - serverless-plugin-microservices
 
 custom:
   service:
@@ -151,7 +151,7 @@ _Note: pay attention that if you use serverless as a npm package it contain temp
 Benefits:
 - A complete isolation of services dependencies
 - Services can reused for an other application
-- Seprate version versioning for each sevice
+- Separate version versioning for each service
 
 ## Commands
 
