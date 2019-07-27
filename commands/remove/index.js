@@ -15,7 +15,7 @@ class Controller {
         strategy: {
           usage:
             'Deploy strategy, allowed values: parallel, sequential (e.g. "--strategy \'parallel\'" or "-t \'parallel\'")',
-          required: true,
+          required: false,
           shortcut: 't'
         },
         stage: {
