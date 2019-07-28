@@ -18,7 +18,8 @@ class ServerlessPlugin {
         usage: 'Microservices manager',
         commands: {
           init: commands.init.command,
-          deploy: commands.deploy.command
+          deploy: commands.deploy.command,
+          delete: commands.delete.command
         }
       }
     }

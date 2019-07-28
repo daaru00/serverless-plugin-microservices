@@ -7,7 +7,7 @@ class Controller {
    */
   constructor () {
     this.description = {
-      usage: 'Depoy services.',
+      usage: 'Delete services.',
       lifecycleEvents: [
         'handler',
         'deleteState'
@@ -15,7 +15,7 @@ class Controller {
       options: {
         strategy: {
           usage:
-            'Deploy strategy, allowed values: parallel, sequential (e.g. "--strategy \'parallel\'" or "-t \'parallel\'")',
+            'Delete strategy, allowed values: parallel, sequential (e.g. "--strategy \'parallel\'" or "-t \'parallel\'")',
           required: false,
           shortcut: 't'
         },
@@ -49,10 +49,10 @@ class Controller {
 
     this.logger.log(`Initializing all services..`)
     const shell = new Shell(services, {
-      mode: this.options.strategy || _.get(this.config, 'strategy', 'sequential')
+      mode: this.options.strategy || _.get(this.config, 'strategy', 'parallel')
     })
 
-    let command = `serverles remove --stage ${this.options.stage}`
+    let command = `serverless remove --stage ${this.options.stage}`
     if (this.options.region && this.options.region.trim() !== '') {
       command += ` --region ${this.options.region}`
     }
