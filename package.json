@@ -1,6 +1,6 @@
 {
   "name": "serverless-plugin-microservices",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Serverless plugin to handle microservices architecture",
   "main": "index.js",
   "repository": {
