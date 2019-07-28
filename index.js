@@ -15,13 +15,15 @@ class ServerlessPlugin {
         usage: 'Microservices manager',
         commands: {
           init: commands.init.command,
-          deploy: commands.deploy.command
+          deploy: commands.deploy.command,
+          delete: commands.delete.command
         }
       }
     }
     this.hooks = {
       'microservices:init:handler': commands.init.controller.bind(this),
-      'microservices:deploy:handler': commands.deploy.controller.bind(this)
+      'microservices:deploy:handler': commands.deploy.controller.bind(this),
+      'microservices:delete:handler': commands.delete.controller.bind(this)
     }
 
     this.logger = new Logger(this.serverless)

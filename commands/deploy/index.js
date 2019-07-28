@@ -7,7 +7,7 @@ class Controller {
    */
   constructor () {
     this.description = {
-      usage: 'Depoy services.',
+      usage: 'Deploy services.',
       lifecycleEvents: [
         'handler'
       ],
@@ -50,7 +50,7 @@ class Controller {
       mode: this.options.strategy || _.get(this.config, 'strategy', 'sequential')
     })
 
-    let command = `serverles deploy --stage ${this.options.stage}`
+    let command = `serverless deploy --stage ${this.options.stage}`
     if (this.options.region && this.options.region.trim() !== '') {
       command += ` --region ${this.options.region}`
     }
