@@ -9,7 +9,8 @@ class Controller {
     this.description = {
       usage: 'Depoy services.',
       lifecycleEvents: [
-        'handler'
+        'handler',
+        'deleteState'
       ],
       options: {
         strategy: {

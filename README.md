@@ -30,6 +30,8 @@ custom:
       - auth
       - cart
       - products
+    state:
+      ssmParameter: /${self:service.name}/microservices/deployed # SSM parameter key
 ```
 
 `path`: glob pattern that point to service's `serverless.yml` file.
@@ -37,6 +39,8 @@ custom:
 `strategy`: this is the default configuration of deploy strategy. Can be overrided by `--strategy` parameter. This can be used to deploy service with cross-service dependencies that require a sequential deploy in some cases.
 
 `only`: during services load their `serverless.yml` are readed and `service` key (use by Serverless to identify your app name) is used as filter target.
+
+`state.ssmParameter`: [SSM Parameter](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html) key used to store current deployed services names. Default is `/<service name>/microservices/deployed`, where `<service name>` is the deployed service name (declared in root serverless.yml).
 
 ## Repository structures
 
@@ -169,7 +173,9 @@ Deploy services using:
 ```bash
 serverless microservices deploy --stage dev --region us-west-1
 ```
-this will execute `severless deploy` on every services directories with stage and region parameter.
+this will execute `severless deploy` on every services directories with stage and region parameter. Additionally this command save and retrieve the SSM Parameter used to store current deployed services.
+
+At the end of deploy old deployed service not yet founded in current deploy services list using the same `microservices remove` command.
 
 ### Remove services
 
@@ -177,7 +183,7 @@ Remove services using:
 ```bash
 serverless microservices remove --stage dev --region us-west-1
 ```
-this will execute `severless remove` on every services directories with stage and region parameter.
+this will execute `severless remove` on every services directories with stage and region parameter. At the end of remove process the SSM Parameter to store deployed services will be removed.
 
 ## TODO
 

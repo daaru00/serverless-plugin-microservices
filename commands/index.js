@@ -5,14 +5,14 @@ const removeController = require('./remove')
 module.exports = {
   init: {
     command: initController.description,
-    controller: initController.handler
+    controller: initController
   },
   deploy: {
     command: deployController.description,
-    controller: deployController.handler
+    controller: deployController
   },
   remove: {
     command: removeController.description,
-    controller: removeController.handler
+    controller: removeController
   }
 }
